@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Access Logs</h2>
+<ul>
+    {% for log in logs %}
+    <li>{{ log.user }} toggled {{ log.locker }} to {{ log.state }} at {{ log.time }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

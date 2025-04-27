@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome, {{ username }}</h2>
+<h3>Locker Control</h3>
+{% for name, state in lockers.items() %}
+<form action="{{ url_for('toggle_locker', locker_name=name) }}" method="GET">
+    <button type="submit">{{ name }}: {{ state }}</button>
+</form>
+{% endfor %}
+{% endblock %}
